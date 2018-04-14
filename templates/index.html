@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="App.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="banner">
@@ -15,20 +16,12 @@
 
         <div id='view' class=column></div>
         <div id="items">
-           <p>items</p>
-           <p>items</p>
+           <p>Midpoint Destination</p>
+           <p>Midpoint Destination</p>
         </div>
     </div>
 
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('view'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
+    <script src="javascript/run_devon.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT4CSa9LNsD6ae3M81SZRcUOt3OZ9bJGA&callback=initMap"
     async defer></script>
   </body>

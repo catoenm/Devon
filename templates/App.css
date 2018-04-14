@@ -4,13 +4,13 @@
 }
 
 body {
-    background-color: grey;
+    background-color: lightgrey;
 }
 #banner {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     font-family: "League";
     background-color: white;
 }
@@ -27,7 +27,7 @@ html, body {
 .column {
     float: left;
     width: 20%;
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 /* Clear floats after the columns */
@@ -42,10 +42,16 @@ html, body {
     width:20%;
     height:100%;
     overflow:auto;
-    background-color: grey;
+    background-color: lightgrey;
+    font-family: "League";
+    font-size: 24px;
 }
 
 #view {
     width:80%;
-    height:900px;
+    height:700px;
+}
+
+p:hover {
+    background-color: grey;
 }

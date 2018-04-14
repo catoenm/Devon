@@ -67,3 +67,6 @@ class Algorithm():
         print x.vs['lon']
         print x.vs['id']
         print x.es['weight']
+
+
+
