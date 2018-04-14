@@ -38,14 +38,23 @@ function addMarker(location) {
         if(marker_count == 1) {
             var result = null;
             $.ajax({
-                url: 'http://127.0.0.1:5000/?start=' + start_marker + '&end=' + location,
-                success: function(response) {
-                    result = response;
-                    for(var i = 0; i < result.length; i++) {
-
-                    }
-                }
-            });
+                // url: 'http://127.0.0.1:5000/?start=' + start_marker + '&end=' + location,
+                // success: function(response) {
+                //     result = response;
+                //     items = ""
+                //     for(var i = 0; i < result.length; i++) {
+                //         items += result[i]['name' + '\n']
+                //     }
+                //     document.getElementById("items").innerHTML = items
+                // }
+            })
+            var response = JSON.parse('[{"lat": 37.79884709419293, "lon": -122.42025079345706, "name": "source"}, {"lat": 37.79884709419293, "lon": -122.42025079345706, "name": "source"}]');
+            alert(response);
+            items = "";
+            for(var i = 0; i < result.length; i++) {
+                items += result[i]['name'] + '<br>'
+            }
+            document.getElementById("items").innerHTML = items
         }
         marker_count++;
         var marker = new google.maps.Marker({
