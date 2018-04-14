@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "League";
+    src: url("fonts/LeagueGothic-Regular.otf");
+}
+
+body {
+    background-color: grey;
+}
+#banner {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "League";
+    background-color: white;
+}
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    background-color: grey;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#items {
+    text-align: center;
+    width:20%;
+    height:100%;
+    overflow:auto;
+    background-color: grey;
+}
+
+#view {
+    width:80%;
+    height:900px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devon</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="App.css">
+  </head>
+  <body>
+    <div id="banner">
+        Devon
+    </div>
+
+    <div class="row">
+
+        <div id='view' class=column></div>
+        <div id="items">
+           <p>items</p>
+           <p>items</p>
+        </div>
+    </div>
+
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('view'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT4CSa9LNsD6ae3M81SZRcUOt3OZ9bJGA&callback=initMap"
+    async defer></script>
+  </body>
+</html>
