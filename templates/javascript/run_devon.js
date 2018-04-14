@@ -9,11 +9,14 @@ var end_marker;
 function initMap() {
     var haightAshbury = {lat: 37.769, lng: -122.446};
 
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
     map = new google.maps.Map(document.getElementById('view'), {
         zoom: 12,
         center: haightAshbury,
         mapTypeId: 'terrain'
     });
+    directionsDisplay.setMap(map);
 
     // This event listener will call addMarker() when the map is clicked.
     map.addListener('click', function(event) {
