@@ -1,5 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_assets import Bundle, Environment
+from places.algorithm import Algorithm
+from ast import literal_eval as make_tuple
+import json
 
 app = Flask(__name__)
 
@@ -10,7 +13,10 @@ assets.register('main_js', js)
 
 @app.route('/')
 def index():
-    return 'hello'
+    start = request.args.get('start')
+    end = request.args.get('end')
+
+    return json.dumps(Algorithm.run(eval(start), eval(end)))
 
 
 if __name__ == '__main__':

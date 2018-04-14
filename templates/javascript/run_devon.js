@@ -4,7 +4,8 @@
 var map;
 var markers = [];
 var marker_count = 0;
-
+var start_marker;
+var end_marker;
 function initMap() {
     var haightAshbury = {lat: 37.769, lng: -122.446};
 
@@ -23,28 +24,26 @@ function initMap() {
     addMarker(haightAshbury);
 }
 
-var HttpClient = function() {
-    this.get = function(aUrl, aCallback) {
-        var anHttpRequest = new XMLHttpRequest();
-        anHttpRequest.onreadystatechange = function() {
-            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                aCallback(anHttpRequest.responseText);
-        }
-
-        anHttpRequest.open( "GET", aUrl, true );
-        anHttpRequest.send( null );
-    }
-}
-
-
 
 // Adds a marker to the map and push to the array.
 function addMarker(location) {
-    $.ajax({
-      url: 'http://127.0.0.1:5000/'
-    });
 
     if(marker_count < 2) {
+        if(marker_count == 0) {
+            start_marker = location
+        }
+        if(marker_count == 1) {
+            var result = null;
+            $.ajax({
+                url: 'http://127.0.0.1:5000/?start=' + start_marker + '&end=' + location,
+                success: function(response) {
+                    result = response;
+                    for(var i = 0; i < result.length; i++) {
+
+                    }
+                }
+            });
+        }
         marker_count++;
         var marker = new google.maps.Marker({
             position: location,
