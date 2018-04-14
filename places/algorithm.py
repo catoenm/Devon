@@ -19,18 +19,18 @@ class Algorithm():
         source = location_graph.vs.find('source')
         target = location_graph.vs.find('target')
         routes = location_graph.get_all_shortest_paths(source, target, location_graph.es['weight'], OUT)
-        routes_list = []
-        for idx,route in enumerate(routes):
-            routes_list.append([])
+        route_points = []
+        for route in enumerate(routes):
             for v_id in route:
                 vertex = location_graph.vs(v_id)
                 route_point = {
-                    'name': vertex['name'],
-                    'lat': vertex['lat'],
-                    'lon': vertex['lon'],
+                    'name': vertex['name'][0],
+                    'lat': vertex['lat'][0],
+                    'lon': vertex['lon'][0],
                 }
-                routes_list[idx].append(route_point)
-        return routes_list
+                route_points.append(route_point)
+            break;
+        return route_points
 
     @staticmethod
     def generate_location_graph(top_choices, start_location, end_location):
