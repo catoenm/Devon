@@ -1,9 +1,10 @@
 from __future__ import absolute_import
 
 import requests
+import json
 
 
-class PlacesHandler(object):
+class PlacesHandler():
     BASE_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={},{}&radius={}&types={}&name={}&key={}'
     API_KEY = 'AIzaSyDlrIrVqogcMFId9Lgzb3mkF38nXBjRszs'
 
@@ -15,5 +16,5 @@ class PlacesHandler(object):
                                             types,
                                             name,
                                             PlacesHandler.API_KEY)
-        return requests.get(url).text
+        return json.loads(requests.get(url).text)
 
