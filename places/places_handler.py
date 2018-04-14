@@ -3,7 +3,6 @@ from __future__ import absolute_import
 import requests
 import json
 
-
 class PlacesHandler:
     def __init__(self):
         pass
@@ -22,4 +21,3 @@ class PlacesHandler:
         print url
 
         return json.loads(requests.get(url).text)['results']
-
